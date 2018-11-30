@@ -9,9 +9,7 @@ function Person () {
   this.acc = createVector(0, 0);
 
   this.applyForce = function(force) {
-    var f = force.copy();
-    f.div(this.mass);
-    this.acc.add(f);
+    this.acc.add(force);
   }
 
   this.update = function() {
@@ -21,7 +19,7 @@ function Person () {
   }
 
   this.display = function() {
-    fill(255);
+    fill(255, 130, 150);
     stroke(255);
   rect(this.pos.x, this.pos.y - 50, 20, 50);
   }
